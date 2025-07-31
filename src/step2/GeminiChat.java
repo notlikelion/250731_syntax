@@ -22,11 +22,13 @@ public class GeminiChat {
         // API 키 만들기
         // 예시 : AIzaSyCcCvoj9SJdLKiBjCl********
         HttpClient client = HttpClient.newHttpClient(); // 요청을 보내주는 친구
-        String GEMINI_API_KEY = "";
+        String GEMINI_API_KEY = ""; // 👀
+        // 환경변수화 하는 것 (dotenv, application.yaml)
         // 이건 절대 푸시하면 안된다 (open 되면 안된다... 이거 open하면 구글이 알아서 차단해줌)
-        String rule = "100자 이내, 간결하게, 답변만 출력.";
+        String rule = "100자 이내, 간결하게, 답변만 출력."; // 👀
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"))
+                // gemini-2.0-flash -> pro. 2.5.
                 .headers("Content-Type", "application/json",
                         "X-goog-api-key", GEMINI_API_KEY)
                 .POST(HttpRequest.BodyPublishers.ofString(
@@ -43,7 +45,7 @@ public class GeminiChat {
                           }
                         ]
                       }
-                    """.formatted(question, rule) // (1) ✅ 입력할 때 가이드 프롬프트
+                """.formatted(question, rule) // (1) ✅ 입력할 때 가이드 프롬프트
                 ))
                 .build(); // 요청 자체
         // (2) ✅ 출력할 때 text만 추출
