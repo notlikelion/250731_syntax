@@ -50,6 +50,7 @@ public class Solution01 {
         int num = scanner.nextInt(); // 숫자 입력을 받겠다
         // 내가 어떤 값을 받아서 재사용을 하려면 이름을 적어서 저장해둬야한다 - 변수
         // 숫자 -> 입력을 하면 \n 남아있음 (엔터를 쳐서 줄바꿈으로 입력하니까...)
+        // 자바 버퍼 이슈...
         scanner.nextLine(); // 이걸 안하면 -> \n를 인식해서 -> 그냥 다음으로 넘어감
         System.out.println("당신이 좋아하는 숫자는 " + num + "입니다! 🤣");
 
