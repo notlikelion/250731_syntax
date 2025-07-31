@@ -15,7 +15,7 @@ public class GeminiChat {
         Scanner sc = new Scanner(System.in); // 터미널을 통한 입력
         System.out.print("질문을 입력해주세요 \uD83D\uDE3B: ");
         String question = sc.nextLine();
-        System.out.println("당신의 질문은 " + question + "입니다.");
+        System.out.println("당신의 질문은 [" + question + "]입니다.");
         // Gemini와 통신하는 로직은요? -> 저한테 받아서 해야죠 뭐...
         // API_KEY
         // https://aistudio.google.com/apikey > 동의
@@ -46,7 +46,7 @@ public class GeminiChat {
                     """.formatted(question, rule) // (1) ✅ 입력할 때 가이드 프롬프트
                 ))
                 .build(); // 요청 자체
-        // (2) 출력할 때 text만 추출
+        // (2) ✅ 출력할 때 text만 추출
         String result = null;
         try {
             // 요청으로 받은 응답
@@ -59,8 +59,14 @@ public class GeminiChat {
         }
         // 출력 : Gemini
         // \ : "는 문자열을 나타내니까 문자열 내부에서 써주려면 \"로 나타내야함.
-        result = result.split("\"text\": \"")[1]; // 정규표현식...?
+        result = result
+                // 정규표현식
+                .split("\"text\": \"")[1] // 쪼개주는 것
+                .split("}")[0]
+                .replace("\\n\"", "") // 바꿔주는 것
+                .trim() // 앞뒤 공백 삭제
+        ;
         // 0, 1, 2 ... 쪼개져있는 것. // 0 'text' 앞에 있는 것. 1 뒤에 있는 것.
-        System.out.println(result);
+        System.out.println("AI의 답변은 [" + result + "]입니다.");
     }
 }
