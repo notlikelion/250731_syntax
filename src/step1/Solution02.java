@@ -41,5 +41,6 @@ public class Solution02 {
         sc.close();
 
         // https://g.co/gemini/share/28c12be7c156
+        // jvm, gc에 대해서 (변수-메모리)
     }
 }
