@@ -80,5 +80,20 @@ public class Solution03 {
 
         // 비트는 생략함. (알고리즘 속도 개선할 거 아니면...)
         // 논리 연산자
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        System.out.println("n1 : " + n1 + " n2 : " + n2);
+        System.out.println("n1 > n2 : " + (n1 > n2)); // ()를 사용하면 우선도 확보
+        System.out.println("n2 < n1 : " + (n1 > n2)); // ()를 사용하면 우선도 확보
+        // 19세 음주. 55세 연금.
+        System.out.print("당신의 나이는? ");
+        int age = sc.nextInt();
+        // 19세 미만이라 음주도 안돼, 연금도 못받아
+        // 19세 이상이라 음주는 돼, 근데 연금은 못받아
+        // 55세 이상이라 음주도 돼, 연금도 받아
+        System.out.println("음주 😡 연금 😡" + (age < 19));
+        System.out.println("음주 ✅ 연금 😡" + (age >= 19) + (age < 55));
+        System.out.println("음주 ✅ 연금 ✅" + (age >= 55));
     }
 }
