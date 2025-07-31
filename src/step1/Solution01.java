@@ -1,5 +1,7 @@
 package step1;
 
+import java.util.Scanner;
+
 // [접근제어자] [구현체종류] [이름] {}
 /// **Java Doc** 이건 마크다운이 되고
 public class Solution01 {
@@ -12,7 +14,8 @@ public class Solution01 {
     // kebab-case : 띄어쓰기를 (-)로 처리
     // 들어오는 길.
     /**
-     * 이것도 여러줄 Java Doc입니다 <- 이건 마크다운이 안된다
+     * <p>이것도 여러줄 <strong>Java Doc</strong>입니다</p>
+     * 🫠 이건 마크다운이 안된다 (하지만 태그가 된다;;;)
      * */
     public static void main(String[] args) {
         // 출력
@@ -35,5 +38,18 @@ public class Solution01 {
         System.out.println("뭔 차이지?"); // 알아서 줄바꿈을 해준다
         System.out.println("뭔 차이지?");
 
+        // 입력 (Scanner)
+        // 터미널이나 CLI 할 때 입력 받는 방식
+        // -> 우리는 일반적으로 화면을 앱으로 받거나 웹으로 받아요
+        Scanner scanner = new Scanner(System.in);
+        // Scanner라는 클래스를 바탕으로 인스턴스를 생성하여,
+        // scanner라는 변수에 주입하기 위해, new 키워드를 통해 생성자를 불러오고,
+        // System.in이라는 arguments 통해 터미널에서 텍스트 입력값을 받아오는 설정을 주입
+
+        System.out.print("본인이 좋아하는 숫자를 입력해주세요 : ");
+        int num = scanner.nextInt(); // 숫자 입력을 받겠다
+        System.out.println("당신이 좋아하는 숫자는 " + num + "입니다! 🤣");
+
+        scanner.close();
     }
 }
