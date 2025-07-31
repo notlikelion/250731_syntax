@@ -81,19 +81,40 @@ public class Solution03 {
         // 비트는 생략함. (알고리즘 속도 개선할 거 아니면...)
         // 논리 연산자
         Scanner sc = new Scanner(System.in);
-        int n1 = sc.nextInt();
-        int n2 = sc.nextInt();
-        System.out.println("n1 : " + n1 + " n2 : " + n2);
-        System.out.println("n1 > n2 : " + (n1 > n2)); // ()를 사용하면 우선도 확보
-        System.out.println("n2 < n1 : " + (n1 > n2)); // ()를 사용하면 우선도 확보
+//        int n1 = sc.nextInt();
+//        int n2 = sc.nextInt();
+//        System.out.println("n1 : " + n1 + " n2 : " + n2);
+//        System.out.println("n1 > n2 : " + (n1 > n2)); // ()를 사용하면 우선도 확보
+//        System.out.println("n2 < n1 : " + (n1 > n2)); // ()를 사용하면 우선도 확보
         // 19세 음주. 55세 연금.
-        System.out.print("당신의 나이는? ");
-        int age = sc.nextInt();
+//        System.out.print("당신의 나이는? ");
+//        int age = sc.nextInt();
         // 19세 미만이라 음주도 안돼, 연금도 못받아
         // 19세 이상이라 음주는 돼, 근데 연금은 못받아
         // 55세 이상이라 음주도 돼, 연금도 받아
-        System.out.println("음주 😡 연금 😡" + (age < 19));
-        System.out.println("음주 ✅ 연금 😡" + (age >= 19) + (age < 55));
-        System.out.println("음주 ✅ 연금 ✅" + (age >= 55));
+//        System.out.println("음주 😡 연금 😡" + (age < 19));
+//        System.out.println("음주 ✅ 연금 😡" + (age >= 19) + (age < 55));
+//        System.out.println("음주 ✅ 연금 😡" + (age >= 19 && age < 55));
+        // 15 : false / true
+        // 20 : true / true
+        // 60 : true / false
+//        System.out.println("음주 ✅ 연금 ✅" + (age >= 55));
+        System.out.print("당신이 갖고 있는 돈은? : ");
+        int money = sc.nextInt();
+        // 삼각김밥 1000원. 제로콜라 2000원
+        // \(또는 ₩) -> | (shift)
+        System.out.println("삼각김밥 또는 제로콜라 구매 가능 " + (money >= 1000 || money >= 2000));
+        // && || (단축연산자) -> &, | (비트연산자)
+        // &&는 앞에 온 boolean이 false면 평가 종료하고 false로 리턴.
+        // ||는 앞에 온 boolean이 true면 평가 종료하고 true로 리턴.
+        // a() && b() : a()가 false면 b()가 실행이 안된다
+        // a() || b() : a()가 true면 b()가 실행이 안된다 // 파이썬 and, or.
+        // !(not) -> true를 false, false를 true.
+        // 아이디검증 && 패스워드검증 -> 로그인
+        // 아이디검증부터 실패하면, 패스워드 검증 관련된 작업을 생략.
+        // true && true -> (true &&) true
+        // false && true -> false // x
+        // true || false -> true // x
+        // false || false -> (false ||) false
     }
 }
