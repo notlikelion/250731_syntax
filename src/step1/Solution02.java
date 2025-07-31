@@ -39,5 +39,7 @@ public class Solution02 {
         // 컴퓨터는 2진수인데, 소수점은 10진수 -> 이거를 표현하려다보니 오차가 있음
         System.out.println("당신의 시력은 " + eye);
         sc.close();
+
+        // https://g.co/gemini/share/28c12be7c156
     }
 }
